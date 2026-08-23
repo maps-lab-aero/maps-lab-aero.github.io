@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #eef3fa;
+  --color-surface: #ffffff;
+  --color-elevated: #ffffff;
+  --color-fg: #0b1f3a;
+  --color-muted: #4a5d78;
+  --color-subtle: #7a8ba3;
+  --color-primary: #0c2d6b;
+  --color-primary-hover: #071e4a;
+  --color-primary-soft: #e4ecf8;
+  --color-border: #c5d3e8;
+  --color-news: #f4f8fd;
+  --color-ink-2: #12305a;
+  --color-navy: #0a1f44;
+  --color-glass: rgb(255 255 255 / 0.58);
+  --font-sans: "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", "Source Serif Pro", "Iowan Old Style", Georgia, serif;
+  --font-display: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background:
+      radial-gradient(1200px 520px at 12% -10%, rgb(12 45 107 / 0.1), transparent 60%),
+      radial-gradient(900px 480px at 100% 0%, rgb(255 255 255 / 0.9), transparent 55%),
+      linear-gradient(180deg, #f7faff 0%, #e8eef8 48%, #eef3fa 100%);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgb(255 255 255 / 0.58);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+    border: 1px solid rgb(255 255 255 / 0.72);
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.7) inset,
+      0 12px 40px -24px rgb(10 31 68 / 0.28);
+  }
+
+  .glass-navy {
+    background: rgb(10 31 68 / 0.78);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    border-top: 1px solid rgb(255 255 255 / 0.14);
+    color: #e8eef8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
