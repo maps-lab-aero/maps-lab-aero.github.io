@@ -1166,3 +1166,47 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
 }
+/* Final APS Lab homepage polish: stable rotating news card without text collisions. */
+.news-ticker {
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 28px 28px 26px;
+}
+
+.news-ticker-window {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 170px;
+}
+
+.news-ticker-link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.news-ticker-item span {
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.52;
+}
+
+@media (max-width: 980px) {
+  .news-ticker {
+    min-height: 300px;
+  }
+
+  .news-ticker-window {
+    min-height: 148px;
+  }
+}
+
+@media (max-width: 520px) {
+  .news-ticker {
+    min-height: 340px;
+    padding: 24px 22px;
+  }
+
+  .news-ticker-window {
+    min-height: 190px;
+  }
+}
